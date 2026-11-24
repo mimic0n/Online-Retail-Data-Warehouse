@@ -1,0 +1,19 @@
+Sales Revenue = COALESCE(CALCULATE(SUM(fact_sales[line_amount]), fact_sales[transaction_type] = "SALE"), 0)
+
+Cancel Adjust Amount = ABS(COALESCE(CALCULATE(SUM(fact_sales[line_amount]), fact_sales[transaction_type] IN {"RETURN_CANCELLATION", "ADJUSTMENT"}), 0))
+
+Adjusted Revenue = [Sales Revenue] - [Cancel Adjust Amount]
+
+Sale Invoices = COALESCE(CALCULATE(DISTINCTCOUNT(fact_sales[invoice_no]), fact_sales[transaction_type] = "SALE"), 0)
+
+Avg Invoice Value = DIVIDE([Sales Revenue], [Sale Invoices])
+
+Known Customers = COALESCE(CALCULATE(DISTINCTCOUNT(fact_sales[customer_key]), fact_sales[transaction_type] = "SALE", fact_sales[customer_key] <> 0), 0)
+
+Rows Unknown Customer = COALESCE(CALCULATE(COUNTROWS(fact_sales), fact_sales[customer_key] = 0), 0)
+
+Rows Read = SUM(etl_batch[rows_read])
+
+Rows Valid = SUM(etl_batch[rows_valid])
+
+Rows Rejected = SUM(etl_batch[rows_rejected])

@@ -1,0 +1,838 @@
+{
+  "monthly_sales": [
+    {
+      "year": 2009,
+      "month": 12,
+      "sales_revenue": "825685.7600"
+    },
+    {
+      "year": 2010,
+      "month": 1,
+      "sales_revenue": "652708.5020"
+    },
+    {
+      "year": 2010,
+      "month": 2,
+      "sales_revenue": "553339.7360"
+    },
+    {
+      "year": 2010,
+      "month": 3,
+      "sales_revenue": "833570.1310"
+    },
+    {
+      "year": 2010,
+      "month": 4,
+      "sales_revenue": "681528.9920"
+    },
+    {
+      "year": 2010,
+      "month": 5,
+      "sales_revenue": "659858.8600"
+    },
+    {
+      "year": 2010,
+      "month": 6,
+      "sales_revenue": "752270.1400"
+    },
+    {
+      "year": 2010,
+      "month": 7,
+      "sales_revenue": "650712.9400"
+    },
+    {
+      "year": 2010,
+      "month": 8,
+      "sales_revenue": "697274.9100"
+    },
+    {
+      "year": 2010,
+      "month": 9,
+      "sales_revenue": "924333.0110"
+    },
+    {
+      "year": 2010,
+      "month": 10,
+      "sales_revenue": "1165483.9100"
+    },
+    {
+      "year": 2010,
+      "month": 11,
+      "sales_revenue": "1470272.4820"
+    },
+    {
+      "year": 2010,
+      "month": 12,
+      "sales_revenue": "1262598.7900"
+    },
+    {
+      "year": 2011,
+      "month": 1,
+      "sales_revenue": "691364.5600"
+    },
+    {
+      "year": 2011,
+      "month": 2,
+      "sales_revenue": "523631.8900"
+    },
+    {
+      "year": 2011,
+      "month": 3,
+      "sales_revenue": "717639.3600"
+    },
+    {
+      "year": 2011,
+      "month": 4,
+      "sales_revenue": "537808.6210"
+    },
+    {
+      "year": 2011,
+      "month": 5,
+      "sales_revenue": "770536.0200"
+    },
+    {
+      "year": 2011,
+      "month": 6,
+      "sales_revenue": "761739.9000"
+    },
+    {
+      "year": 2011,
+      "month": 7,
+      "sales_revenue": "719221.1910"
+    },
+    {
+      "year": 2011,
+      "month": 8,
+      "sales_revenue": "759138.3800"
+    },
+    {
+      "year": 2011,
+      "month": 9,
+      "sales_revenue": "1058590.1720"
+    },
+    {
+      "year": 2011,
+      "month": 10,
+      "sales_revenue": "1154979.3000"
+    },
+    {
+      "year": 2011,
+      "month": 11,
+      "sales_revenue": "1509496.3300"
+    },
+    {
+      "year": 2011,
+      "month": 12,
+      "sales_revenue": "638810.6800"
+    }
+  ],
+  "countries": [
+    {
+      "country": "United Kingdom",
+      "sales_revenue": "17870977.7770"
+    },
+    {
+      "country": "EIRE",
+      "sales_revenue": "664431.7800"
+    },
+    {
+      "country": "Netherlands",
+      "sales_revenue": "554232.3400"
+    },
+    {
+      "country": "Germany",
+      "sales_revenue": "431262.4610"
+    },
+    {
+      "country": "France",
+      "sales_revenue": "356944.6000"
+    },
+    {
+      "country": "Australia",
+      "sales_revenue": "169968.1100"
+    },
+    {
+      "country": "Spain",
+      "sales_revenue": "109178.5300"
+    },
+    {
+      "country": "Switzerland",
+      "sales_revenue": "101011.2900"
+    },
+    {
+      "country": "Sweden",
+      "sales_revenue": "91903.7200"
+    },
+    {
+      "country": "Denmark",
+      "sales_revenue": "69862.1900"
+    },
+    {
+      "country": "Belgium",
+      "sales_revenue": "65753.4200"
+    },
+    {
+      "country": "Norway",
+      "sales_revenue": "60109.6200"
+    },
+    {
+      "country": "Portugal",
+      "sales_revenue": "58016.6500"
+    },
+    {
+      "country": "Japan",
+      "sales_revenue": "47138.3900"
+    },
+    {
+      "country": "Channel Islands",
+      "sales_revenue": "44996.7600"
+    },
+    {
+      "country": "Italy",
+      "sales_revenue": "32550.4200"
+    },
+    {
+      "country": "Finland",
+      "sales_revenue": "29925.5400"
+    },
+    {
+      "country": "Singapore",
+      "sales_revenue": "25317.0600"
+    },
+    {
+      "country": "Cyprus",
+      "sales_revenue": "24980.1300"
+    },
+    {
+      "country": "Hong Kong",
+      "sales_revenue": "23894.3200"
+    },
+    {
+      "country": "Austria",
+      "sales_revenue": "23613.0100"
+    },
+    {
+      "country": "Greece",
+      "sales_revenue": "19096.1900"
+    },
+    {
+      "country": "Israel",
+      "sales_revenue": "11334.6600"
+    },
+    {
+      "country": "United Arab Emirates",
+      "sales_revenue": "11097.6300"
+    },
+    {
+      "country": "Unspecified",
+      "sales_revenue": "10936.0100"
+    },
+    {
+      "country": "Poland",
+      "sales_revenue": "10902.4500"
+    },
+    {
+      "country": "USA",
+      "sales_revenue": "8366.8600"
+    },
+    {
+      "country": "Malta",
+      "sales_revenue": "8099.0900"
+    },
+    {
+      "country": "Lithuania",
+      "sales_revenue": "6553.7400"
+    },
+    {
+      "country": "Iceland",
+      "sales_revenue": "5633.3200"
+    },
+    {
+      "country": "Canada",
+      "sales_revenue": "4883.0400"
+    },
+    {
+      "country": "RSA",
+      "sales_revenue": "4804.3200"
+    },
+    {
+      "country": "Bahrain",
+      "sales_revenue": "3109.7900"
+    },
+    {
+      "country": "Thailand",
+      "sales_revenue": "3070.5400"
+    },
+    {
+      "country": "Lebanon",
+      "sales_revenue": "1905.5800"
+    },
+    {
+      "country": "Brazil",
+      "sales_revenue": "1411.8700"
+    },
+    {
+      "country": "European Community",
+      "sales_revenue": "1300.2500"
+    },
+    {
+      "country": "Bermuda",
+      "sales_revenue": "1253.1400"
+    },
+    {
+      "country": "Korea",
+      "sales_revenue": "1118.5100"
+    },
+    {
+      "country": "Czech Republic",
+      "sales_revenue": "826.7400"
+    },
+    {
+      "country": "West Indies",
+      "sales_revenue": "536.4100"
+    },
+    {
+      "country": "Saudi Arabia",
+      "sales_revenue": "145.9200"
+    },
+    {
+      "country": "Nigeria",
+      "sales_revenue": "140.3900"
+    }
+  ],
+  "top_products": [
+    {
+      "stock_code": "22423",
+      "description": "REGENCY CAKESTAND 3 TIER",
+      "sales_revenue": "344563.2500"
+    },
+    {
+      "stock_code": "M",
+      "description": "Manual",
+      "sales_revenue": "340716.2800"
+    },
+    {
+      "stock_code": "DOT",
+      "description": "DOTCOM POSTAGE",
+      "sales_revenue": "322657.4800"
+    },
+    {
+      "stock_code": "85123A",
+      "description": "CREAM HANGING HEART T-LIGHT HOLDER",
+      "sales_revenue": "263109.6700"
+    },
+    {
+      "stock_code": "85099B",
+      "description": "JUMBO BAG RED RETROSPOT",
+      "sales_revenue": "183454.8300"
+    },
+    {
+      "stock_code": "23843",
+      "description": "PAPER CRAFT , LITTLE BIRDIE",
+      "sales_revenue": "168469.6000"
+    },
+    {
+      "stock_code": "47566",
+      "description": "PARTY BUNTING",
+      "sales_revenue": "149187.0500"
+    },
+    {
+      "stock_code": "84879",
+      "description": "ASSORTED COLOUR BIRD ORNAMENT",
+      "sales_revenue": "132187.9200"
+    },
+    {
+      "stock_code": "POST",
+      "description": "POSTAGE",
+      "sales_revenue": "127597.4200"
+    },
+    {
+      "stock_code": "22086",
+      "description": "PAPER CHAIN KIT 50'S CHRISTMAS",
+      "sales_revenue": "123141.5400"
+    }
+  ],
+  "top_customers": [
+    {
+      "customer_id": "18102",
+      "sales_revenue": "608821.6500"
+    },
+    {
+      "customer_id": "14646",
+      "sales_revenue": "528602.5200"
+    },
+    {
+      "customer_id": "14156",
+      "sales_revenue": "313946.3700"
+    },
+    {
+      "customer_id": "14911",
+      "sales_revenue": "295972.6300"
+    },
+    {
+      "customer_id": "17450",
+      "sales_revenue": "246973.0900"
+    },
+    {
+      "customer_id": "13694",
+      "sales_revenue": "196482.8100"
+    },
+    {
+      "customer_id": "17511",
+      "sales_revenue": "175603.5500"
+    },
+    {
+      "customer_id": "16446",
+      "sales_revenue": "168472.5000"
+    },
+    {
+      "customer_id": "16684",
+      "sales_revenue": "147142.7700"
+    },
+    {
+      "customer_id": "12415",
+      "sales_revenue": "144458.3700"
+    }
+  ],
+  "monthly_cancellations": [
+    {
+      "year": 2009,
+      "month": 12,
+      "cancel_adjust_amount": "25838.6500"
+    },
+    {
+      "year": 2010,
+      "month": 1,
+      "cancel_adjust_amount": "28675.6100"
+    },
+    {
+      "year": 2010,
+      "month": 2,
+      "cancel_adjust_amount": "20621.8800"
+    },
+    {
+      "year": 2010,
+      "month": 3,
+      "cancel_adjust_amount": "67721.3700"
+    },
+    {
+      "year": 2010,
+      "month": 4,
+      "cancel_adjust_amount": "37354.2000"
+    },
+    {
+      "year": 2010,
+      "month": 5,
+      "cancel_adjust_amount": "44536.0300"
+    },
+    {
+      "year": 2010,
+      "month": 6,
+      "cancel_adjust_amount": "72483.5300"
+    },
+    {
+      "year": 2010,
+      "month": 7,
+      "cancel_adjust_amount": "31444.7900"
+    },
+    {
+      "year": 2010,
+      "month": 8,
+      "cancel_adjust_amount": "40498.5700"
+    },
+    {
+      "year": 2010,
+      "month": 9,
+      "cancel_adjust_amount": "70682.5800"
+    },
+    {
+      "year": 2010,
+      "month": 10,
+      "cancel_adjust_amount": "81389.6900"
+    },
+    {
+      "year": 2010,
+      "month": 11,
+      "cancel_adjust_amount": "47617.8400"
+    },
+    {
+      "year": 2010,
+      "month": 12,
+      "cancel_adjust_amount": "136153.3200"
+    },
+    {
+      "year": 2011,
+      "month": 1,
+      "cancel_adjust_amount": "131364.3000"
+    },
+    {
+      "year": 2011,
+      "month": 2,
+      "cancel_adjust_amount": "25569.2400"
+    },
+    {
+      "year": 2011,
+      "month": 3,
+      "cancel_adjust_amount": "34372.2800"
+    },
+    {
+      "year": 2011,
+      "month": 4,
+      "cancel_adjust_amount": "44601.5000"
+    },
+    {
+      "year": 2011,
+      "month": 5,
+      "cancel_adjust_amount": "47202.5100"
+    },
+    {
+      "year": 2011,
+      "month": 6,
+      "cancel_adjust_amount": "70616.7800"
+    },
+    {
+      "year": 2011,
+      "month": 7,
+      "cancel_adjust_amount": "37921.0800"
+    },
+    {
+      "year": 2011,
+      "month": 8,
+      "cancel_adjust_amount": "54333.7500"
+    },
+    {
+      "year": 2011,
+      "month": 9,
+      "cancel_adjust_amount": "38902.5500"
+    },
+    {
+      "year": 2011,
+      "month": 10,
+      "cancel_adjust_amount": "84274.6300"
+    },
+    {
+      "year": 2011,
+      "month": 11,
+      "cancel_adjust_amount": "47740.0800"
+    },
+    {
+      "year": 2011,
+      "month": 12,
+      "cancel_adjust_amount": "205124.6700"
+    }
+  ],
+  "kpi": [
+    {
+      "sales_revenue": "20972594.5680",
+      "cancel_adjust_amount": "1527041.4300",
+      "sale_invoices": 40077,
+      "known_customers": 5878,
+      "adjusted_revenue": "19445553.1380",
+      "avg_invoice_value": "523.3074972677595628"
+    }
+  ],
+  "december_1_to_9": [
+    {
+      "year": 2009,
+      "sales_revenue": "402270.2000"
+    },
+    {
+      "year": 2010,
+      "sales_revenue": "877705.3000"
+    },
+    {
+      "year": 2011,
+      "sales_revenue": "638810.6800"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_type": "RETURN_CANCELLATION",
+      "rows_n": 19493,
+      "total_amount": "-1527041.43"
+    },
+    {
+      "transaction_type": "SALE",
+      "rows_n": 1041670,
+      "total_amount": "20972594.57"
+    }
+  ],
+  "duplicate_source_keys": [],
+  "unknown_customer": [
+    {
+      "rows_unknown_customer": 236870
+    }
+  ],
+  "batches": [
+    {
+      "batch_id": 1,
+      "sheet_name": "Year 2009-2010",
+      "status": "SUCCESS",
+      "rows_read": 525461,
+      "rows_valid": 521770,
+      "rows_rejected": 3691,
+      "rows_inserted": 521770,
+      "rows_existing": 0,
+      "eq_read_ok": true,
+      "eq_valid_ok": true,
+      "elapsed": "00:01:56.458176"
+    },
+    {
+      "batch_id": 2,
+      "sheet_name": "Year 2010-2011",
+      "status": "SUCCESS",
+      "rows_read": 541910,
+      "rows_valid": 539393,
+      "rows_rejected": 2517,
+      "rows_inserted": 539393,
+      "rows_existing": 0,
+      "eq_read_ok": true,
+      "eq_valid_ok": true,
+      "elapsed": "00:02:02.475426"
+    }
+  ],
+  "fact_size": [
+    {
+      "fact_rows": 1061163,
+      "meets_size_target": true,
+      "matches_inserted": true
+    }
+  ],
+  "orphans": [
+    {
+      "orphan_rows": 0
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "dim_country",
+      "constraint_name": "dim_country_country_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_country",
+      "constraint_name": "dim_country_country_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_country",
+      "constraint_name": "dim_country_pkey",
+      "constraint_type": "PRIMARY KEY"
+    },
+    {
+      "table_name": "dim_country",
+      "constraint_name": "dim_country_country_key",
+      "constraint_type": "UNIQUE"
+    },
+    {
+      "table_name": "dim_customer",
+      "constraint_name": "dim_customer_customer_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_customer",
+      "constraint_name": "dim_customer_check",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_customer",
+      "constraint_name": "dim_customer_pkey",
+      "constraint_type": "PRIMARY KEY"
+    },
+    {
+      "table_name": "dim_customer",
+      "constraint_name": "dim_customer_customer_id_key",
+      "constraint_type": "UNIQUE"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_full_date_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_day_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_month_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_quarter_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_year_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_date_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_pkey",
+      "constraint_type": "PRIMARY KEY"
+    },
+    {
+      "table_name": "dim_date",
+      "constraint_name": "dim_date_full_date_key",
+      "constraint_type": "UNIQUE"
+    },
+    {
+      "table_name": "dim_product",
+      "constraint_name": "dim_product_product_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_product",
+      "constraint_name": "dim_product_stock_code_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_product",
+      "constraint_name": "dim_product_description_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "dim_product",
+      "constraint_name": "dim_product_pkey",
+      "constraint_type": "PRIMARY KEY"
+    },
+    {
+      "table_name": "dim_product",
+      "constraint_name": "dim_product_stock_code_key",
+      "constraint_type": "UNIQUE"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_batch_id_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_quantity_check",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_unit_price_check",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_transaction_type_check",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_check",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_sales_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_source_file_id_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_source_row_id_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_invoice_no_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_invoice_datetime_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_date_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_product_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_customer_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_country_key_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_quantity_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_unit_price_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_line_amount_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_transaction_type_not_null",
+      "constraint_type": "CHECK"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_date_key_fkey",
+      "constraint_type": "FOREIGN KEY"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_customer_key_fkey",
+      "constraint_type": "FOREIGN KEY"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_country_key_fkey",
+      "constraint_type": "FOREIGN KEY"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_batch_id_fkey",
+      "constraint_type": "FOREIGN KEY"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_product_key_fkey",
+      "constraint_type": "FOREIGN KEY"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_pkey",
+      "constraint_type": "PRIMARY KEY"
+    },
+    {
+      "table_name": "fact_sales",
+      "constraint_name": "fact_sales_source_file_id_source_row_id_key",
+      "constraint_type": "UNIQUE"
+    }
+  ]
+}

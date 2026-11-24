@@ -1,6 +1,6 @@
 # Báo cáo triển khai Online Retail II
 
-Ngày kiểm tra: 15/11/2026. Tài liệu này bổ sung kết quả thực hiện cho kế hoạch; không thay đổi tài liệu kế hoạch gốc.
+Cập nhật ngày 24/11/2026. Hai đợt nạp trên PostgreSQL dịch vụ `retail_dwh` đã hoàn tất. Kho ghi nhận **1.061.163 dòng giao dịch** và **19.445.553,14 GBP doanh thu sau điều chỉnh** từ hai sheet của Online Retail II.
 
 ## Kiến trúc
 
@@ -25,11 +25,13 @@ Khách thiếu mã dùng customer_key=0. Tên sản phẩm là mô tả không t
 
 Đọc trực tiếp file `online-retail-ii.xlsx`, SHA-256 `bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980`.
 
-| Sheet | Đọc | Hợp lệ | Loại |
-|---|---:|---:|---:|
-| Year 2009-2010 | 525.461 | 521.770 | 3.691 |
-| Year 2010-2011 | 541.910 | 539.393 | 2.517 |
-| Tổng | 1.067.371 | 1.061.163 | 6.208 |
+| Batch và sheet | Đọc | Hợp lệ | Loại | Chèn mới | Đã có | Thời gian |
+|---|---:|---:|---:|---:|---:|---:|
+| 1 · Year 2009-2010 | 525.461 | 521.770 | 3.691 | 521.770 | 0 | 00:01:56.458176 |
+| 2 · Year 2010-2011 | 541.910 | 539.393 | 2.517 | 539.393 | 0 | 00:02:02.475426 |
+| **Tổng** | **1.067.371** | **1.061.163** | **6.208** | **1.061.163** | **0** | **00:03:58.933602** |
+
+Cả hai batch đều có trạng thái `SUCCESS`. Trong từng batch, số dòng đọc bằng số hợp lệ cộng số bị loại, và số hợp lệ bằng số chèn mới cộng số đã có. Bảng fact vượt ngưỡng 100.000 dòng và khớp tổng số dòng chèn mới. Truy vấn kiểm tra trả về 0 khóa nguồn bị lặp và 0 dòng fact thiếu liên kết tới bốn bảng chiều. PostgreSQL liệt kê 46 ràng buộc trong schema `dw`.
 
 6.207 dòng có giá không dương, một dòng có mã C nhưng số lượng dương. Giá nguồn có tối đa ba chữ số thập phân sau khi diễn giải số Excel; chọn numeric(12,4). XML chứa nhiễu biểu diễn nhị phân được diễn giải như số Excel trước khi tạo Decimal, tránh loại nhầm hơn một trăm nghìn dòng.
 
@@ -43,7 +45,26 @@ Khách thiếu mã dùng customer_key=0. Tên sản phẩm là mô tả không t
 
 Doanh thu sau điều chỉnh: **19.445.553,1380 GBP**, hiển thị hai chữ số lẻ là **19.445.553,14 GBP**. Giá trị hủy hiển thị dạng trị tuyệt đối. Chưa xác nhận hoàn tiền hay đối chiếu từng đơn hủy với đơn gốc.
 
-Các số liệu nguồn ở `docs/data_profile.md` và JSON cùng tên. Bằng chứng PostgreSQL ở `docs/results/full_postgres.json` và `.log`.
+Trong bảng fact, 236.870 dòng dùng khóa khách hàng 0, tương đương 22,32% số dòng được giữ lại. Doanh thu toàn kho bao gồm cả các dòng này. Bảng xếp hạng khách hàng chỉ tính giao dịch bán có mã khách xác định.
+
+## Kết quả phân tích bán hàng
+
+| Chỉ tiêu toàn kỳ | Kết quả |
+|---|---:|
+| Doanh thu bán hàng | 20.972.594,5680 GBP |
+| Giá trị hủy và điều chỉnh âm, tính theo trị tuyệt đối | 1.527.041,4300 GBP |
+| Doanh thu sau điều chỉnh | 19.445.553,1380 GBP |
+| Số hóa đơn bán phân biệt | 40.077 |
+| Số khách có mã xác định từng mua hàng | 5.878 |
+| Doanh thu bán hàng bình quân mỗi hóa đơn bán | 523,31 GBP |
+
+**Theo thời gian.** Trong 25 tháng có dữ liệu, tháng 11/2011 đạt doanh thu bán hàng cao nhất với 1.509.496,33 GBP. Tháng 12/2011 chỉ có dữ liệu đến ngày 09. So cùng kỳ từ ngày 01 đến 09/12, doanh thu lần lượt là 402.270,20 GBP năm 2009, 877.705,30 GBP năm 2010 và 638.810,68 GBP năm 2011. Giá trị hủy và điều chỉnh âm cao nhất vào tháng 12/2011, đạt 205.124,67 GBP ngay trong khoảng chín ngày này.
+
+**Theo thị trường.** Trong 43 giá trị quốc gia/vùng ghi nhận, United Kingdom dẫn đầu với 17.870.977,7770 GBP, chiếm 85,21% doanh thu bán hàng. EIRE đứng thứ hai với 664.431,78 GBP, tiếp theo là Netherlands với 554.232,34 GBP.
+
+**Theo sản phẩm và khách hàng.** Mã 22423 (REGENCY CAKESTAND 3 TIER) đứng đầu với 344.563,25 GBP. Hai vị trí kế tiếp là M (Manual, 340.716,28 GBP) và DOT (DOTCOM POSTAGE, 322.657,48 GBP) vì dự án giữ cả mã ghi nhận thủ công và mã phí. Trong nhóm khách có mã, khách 18102 dẫn đầu với 608.821,65 GBP, tiếp theo là khách 14646 với 528.602,52 GBP.
+
+Toàn bộ kết quả gồm doanh thu và giá trị hủy theo tháng, doanh thu theo thị trường, hai bảng xếp hạng top 10, KPI, so sánh tháng 12 và danh sách ràng buộc. [Dữ liệu chi tiết của 14 truy vấn](../results/retail_dwh_sql.json) · [SQL phân tích](../../sql/04_analysis_queries.sql) · [SQL kiểm tra](../../sql/05_checks.sql)
 
 ## Phạm vi kiểm tra
 
@@ -56,7 +77,7 @@ Kiểm tra toàn nguồn chạy trong cluster tạm rồi xóa; không có datab
 
 ## Những phần cần môi trường tiếp theo
 
-Môi trường hiện chặn mạng cài dependency và mở socket PostgreSQL. Runner qua psycopg2 đã được triển khai nhưng chưa kiểm tra kết nối và transaction từ đầu đến cuối. Dùng README để chạy trên PostgreSQL dịch vụ, sau đó chạy lại và xác nhận staging, lỗi, nhật ký và số tiền.
+Trên PostgreSQL dịch vụ, nhật ký xác nhận hai batch nạp lần đầu. Bước kiểm tra tiếp theo là nạp lại cùng workbook và xác nhận mỗi batch mới có `rows_inserted = 0`. Kết quả nạp lại hiện có thuộc bộ kiểm thử trên cluster tạm. [Kết quả kiểm thử toàn bộ workbook](../results/full_postgres.json)
 
 Chưa có Power BI Desktop: đã chuẩn bị DAX, Power Query, quan hệ và bố cục ba trang; chưa có `.pbix`, ảnh dashboard hoặc đối chiếu DAX/SQL. Chưa đo trung vị năm lần trên database dịch vụ; công cụ benchmark đã có. Mẫu hóa đơn được chọn và tính tự động trong JSON, chưa được tính tay. Chưa có PDF báo cáo cuối kỳ; tài liệu Markdown này có thể xuất PDF sau khi bổ sung kết quả Power BI và benchmark.
 

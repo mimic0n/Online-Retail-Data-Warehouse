@@ -6,7 +6,7 @@ Hướng dẫn riêng cho CachyOS/Arch Linux: [README.linux.md](README.linux.md)
 
 ## Khởi chạy
 
-Cần Python >=3.11, PostgreSQL 15/16 (kiểm thử cục bộ bổ sung trên PostgreSQL 18) và Power BI Desktop trên Windows để dựng `.pbix`.
+Cần Python >=3.11, PostgreSQL 15/16 (kiểm thử cục bộ bổ sung trên PostgreSQL 18) và Power BI Desktop trên Windows để mở và làm mới báo cáo.
 
 ```bash
 python -m venv .venv
@@ -56,7 +56,7 @@ COPY theo khối vào bảng tạm, rồi JOIN dimension và INSERT ON CONFLICT.
 
 `python -m etl.benchmark` xuất CSV kết quả cùng thời gian trung vị, execution plans, phiên bản PostgreSQL và chỉ mục vào `docs/results/`. Bổ sung RAM, ổ đĩa và model CPU thực tế khi đưa vào báo cáo; công cụ chưa tự thu thập đủ phần cứng.
 
-Xem [hướng dẫn Power BI](powerbi/README.md), [measures DAX](powerbi/measures.dax) và [nguồn Power Query](powerbi/source.pq). Chưa có file `retail.pbix` hay ảnh dashboard đã kiểm chứng. Cần dựng và đối chiếu trên Windows. Tổng lịch sử batch bao gồm các lần đọc lại, khác số dòng fact duy nhất.
+Xem [hướng dẫn Power BI](powerbi/README.md), [measures DAX](powerbi/measures.dax) và [nguồn Power Query](powerbi/source.pq). Mở [retail.pbix](powerbi/retail.pbix) trong Power BI Desktop. Mười thẻ tổng quan khớp với PostgreSQL ở độ chính xác hiển thị. Bảng sản phẩm có chênh lệch theo cách nhóm mã hoa/thường. [Kết quả đối chiếu ba trang](docs/report/BAO_CAO_TRIEN_KHAI.md#đối-chiếu-power-bi). Tổng lịch sử batch bao gồm các lần đọc lại, khác số dòng fact duy nhất.
 
 ## Kiểm tra
 

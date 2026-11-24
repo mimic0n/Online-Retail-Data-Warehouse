@@ -1,6 +1,16 @@
 # Dựng dashboard Power BI
 
-Cần Power BI Desktop trên Windows. Thư mục này chứa cấu hình nguồn và DAX; chưa có file `.pbix` được dựng và kiểm tra.
+Mở [retail.pbix](retail.pbix) bằng Power BI Desktop trên Windows. Chọn **Home → Refresh** để đọc dữ liệu mới từ `retail_dwh`. Khi được hỏi thông tin đăng nhập, chọn **Database** và dùng tài khoản PostgreSQL có quyền đọc hai schema `dw` và `staging`.
+
+| Trang đã lưu | Nội dung |
+|---|---|
+| Tổng Quan Bán Hàng | Mười thẻ KPI, doanh thu theo tháng và quốc gia. |
+| Sản phẩm và khách hàng | Hai bảng xếp hạng và thẻ Known Customers. Bộ lọc Top N trên mã sản phẩm có thể hiển thị nhiều dòng mô tả cho một mã. |
+| Dữ liệu và quá trình nạp | Bốn thẻ chất lượng dữ liệu, lịch sử lô và bộ lọc phân cấp theo batch_id, rows_read. |
+
+Để đối chiếu sản phẩm ở đúng cấp chi tiết của kho, dùng `dim_product[product_key]` làm trường lọc Top N theo Sales Revenue và đưa khóa này vào bảng cùng mã và mô tả. Khóa số phân biệt các sản phẩm có mã chỉ khác chữ hoa/thường. [Kết quả SQL và ảnh ba trang](../docs/report/BAO_CAO_TRIEN_KHAI.md#đối-chiếu-power-bi).
+
+## Cấu hình khi dựng lại báo cáo
 
 1. Get Data → PostgreSQL, nhập server và database, chọn Import. Dùng tài khoản chỉ đọc cho báo cáo.
 2. Chọn `dw.fact_sales`, bốn bảng `dw.dim_*`, `staging.etl_batch`. Có thể dùng mẫu `source.pq` cho từng bảng; không ghi mật khẩu vào M.

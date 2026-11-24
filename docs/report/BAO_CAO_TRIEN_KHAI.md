@@ -66,6 +66,22 @@ Trong bảng fact, 236.870 dòng dùng khóa khách hàng 0, tương đương 22
 
 Toàn bộ kết quả gồm doanh thu và giá trị hủy theo tháng, doanh thu theo thị trường, hai bảng xếp hạng top 10, KPI, so sánh tháng 12 và danh sách ràng buộc. [Dữ liệu chi tiết của 14 truy vấn](../results/retail_dwh_sql.json) · [SQL phân tích](../../sql/04_analysis_queries.sql) · [SQL kiểm tra](../../sql/05_checks.sql)
 
+## Đối chiếu Power BI
+
+Báo cáo [retail.pbix](../../powerbi/retail.pbix) gồm ba trang. Các kết quả dưới đây đối chiếu giá trị hiển thị trong ảnh của từng trang với PostgreSQL. Tiền được làm tròn đến 0,01 GBP.
+
+| Phạm vi | Giá trị trên Power BI | Kết quả SQL |
+|---|---|---|
+| Tổng quan · doanh thu bán, giá trị hủy, doanh thu sau điều chỉnh | 20.972.594,57 · 1.527.041,43 · 19.445.553,14 GBP | Khớp cả ba |
+| Tổng quan · hóa đơn bán, bình quân mỗi hóa đơn, khách có mã | 40.077 · 523,31 GBP · 5.878 | Khớp cả ba |
+| Tổng quan · dòng đọc, hợp lệ, bị loại, thiếu mã khách trong fact | 1.067.371 · 1.061.163 · 6.208 · 236.870 | Khớp cả bốn |
+| Khách hàng · mười khách có doanh thu cao nhất | Tổng 2.826.476,26 GBP, dẫn đầu là khách 18102 với 608.821,65 GBP | Khớp mười mã và doanh thu từng khách |
+| Quá trình nạp · batch 1, Year 2009-2010 | SUCCESS, đọc 525.461, hợp lệ và chèn mới 521.770, loại 3.691, thiếu mã khách 104.267 | Khớp nhật ký lô và số fact có customer_key = 0 của lô 1 |
+
+**Chênh lệch ở bảng sản phẩm.** Ảnh hiển thị 11 dòng mô tả cho 10 mã sau khi nhóm, tổng 2.161.204,12 GBP. PostgreSQL giữ riêng các mã theo chữ hoa/thường. Power BI hiển thị 185.566,47 GBP cho nhóm 85099B/b (183.454,83 + 2.111,64) và 340.731,33 GBP cho M/m (340.716,28 + 15,05). Hai mô tả của 85123A/a tạo hai dòng 263.109,67 và 3.992,39 GBP. Để tái lập Q3 trên Power BI, cần xếp hạng theo khóa số product_key. Các chênh lệch này thuộc phạm vi xếp hạng sản phẩm. Tổng doanh thu toàn kỳ khớp SQL.
+
+[Ảnh tổng quan](../../powerbi/Screenshot%202026-11-24%20183955.png) · [Ảnh sản phẩm và khách hàng](../../powerbi/Screenshot%202026-11-24%20184041.png) · [Ảnh quá trình nạp với batch 1](../../powerbi/Screenshot%202026-11-24%20184119.png)
+
 ## Phạm vi kiểm tra
 
 - Bảy nhóm unittest: mọi tổ hợp dấu và tiền tố, chuẩn hóa mã, tiền Decimal, dòng sai kiểu/miền, COPY null/chuỗi rỗng/ký tự đặc biệt số dòng xuyên sheet, đối chiếu tổng tiền độc lập và batch rỗng.
@@ -79,7 +95,7 @@ Kiểm tra toàn nguồn chạy trong cluster tạm rồi xóa; không có datab
 
 Trên PostgreSQL dịch vụ, nhật ký xác nhận hai batch nạp lần đầu. Bước kiểm tra tiếp theo là nạp lại cùng workbook và xác nhận mỗi batch mới có `rows_inserted = 0`. Kết quả nạp lại hiện có thuộc bộ kiểm thử trên cluster tạm. [Kết quả kiểm thử toàn bộ workbook](../results/full_postgres.json)
 
-Chưa có Power BI Desktop: đã chuẩn bị DAX, Power Query, quan hệ và bố cục ba trang; chưa có `.pbix`, ảnh dashboard hoặc đối chiếu DAX/SQL. Chưa đo trung vị năm lần trên database dịch vụ; công cụ benchmark đã có. Mẫu hóa đơn được chọn và tính tự động trong JSON, chưa được tính tay. Chưa có PDF báo cáo cuối kỳ; tài liệu Markdown này có thể xuất PDF sau khi bổ sung kết quả Power BI và benchmark.
+Chưa đo trung vị năm lần trên database dịch vụ; công cụ benchmark đã có. Mẫu hóa đơn được chọn và tính tự động trong JSON, chưa được tính tay. Chưa có PDF báo cáo cuối kỳ; tài liệu Markdown này có thể xuất PDF sau khi bổ sung benchmark.
 
 ## Nguồn
 

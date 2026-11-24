@@ -234,11 +234,11 @@ Chạy lệnh từ thư mục gốc dự án, kiểm tra `SOURCE_FILE` trong `.e
 
 ## 9. Dashboard trên Linux
 
-Phần được chuẩn bị trong dự án là cấu hình Power BI: `powerbi/measures.dax`, `powerbi/source.pq` và `powerbi/README.md`. Để dựng file `.pbix`, dùng Power BI Desktop trên máy Windows hoặc máy ảo Windows.
+Mở [retail.pbix](powerbi/retail.pbix) bằng Power BI Desktop trên Windows hoặc máy ảo Windows. Dùng **Home → Refresh** sau khi nạp dữ liệu mới.
 
 Nếu Power BI ở máy ảo, `localhost` trong máy ảo trỏ tới Windows, không phải máy CachyOS. Cần cấu hình địa chỉ host phù hợp với mạng máy ảo, `listen_addresses`, quy tắc `pg_hba.conf` và firewall để cho phép đúng máy đó truy cập PostgreSQL.
 
-Dự án chưa có dashboard thay thế chạy trực tiếp trên Linux. Nếu bài nộp bắt buộc `.pbix`, giữ bước dựng và đối chiếu Power BI trên Windows.
+Có thể xem ảnh ba trang và kết quả đối chiếu ngay trên Linux qua [báo cáo triển khai](docs/report/BAO_CAO_TRIEN_KHAI.md#đối-chiếu-power-bi).
 
 ## Tài liệu liên quan
 
